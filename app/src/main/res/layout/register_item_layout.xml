@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.1"
+        android:id="@+id/indexNo"
+        android:background="@color/colorPrimaryDark"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:id="@+id/circleImageView"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.1"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.3"
+        android:id="@+id/fullName"
+        android:background="@android:color/background_dark"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.2"
+        android:id="@+id/regNumber"
+        android:background="@color/colorAccent"/>
+
+
+</LinearLayout>

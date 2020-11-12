@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    app:cardBackgroundColor="@color/fragmentColor"
+    tools:context=".NotificationFragment">
+
+    <TextView
+        android:layout_gravity="start|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/error"
+        android:id="@+id/labelTime"
+        />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        app:backgroundTint="@color/colorAccent"
+        android:id="@+id/progressNotif"
+        android:layout_gravity="start|top"
+        android:layout_marginTop="0dp"
+        />
+</androidx.cardview.widget.CardView>

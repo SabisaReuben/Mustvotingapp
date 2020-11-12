@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="androidx.databinding.ObservableList" />
+        <variable
+            name="list"
+            type="com.example.mustapp.ViewResultActivity.ListClass" />
+        <import type="java.lang.Boolean" alias="bool"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ViewResultActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            style="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:background="@drawable/registration_header"
+            app:title="Vote Results"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/defaultColor" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/mainLayout"
+            android:visibility="visible"
+            android:layout_marginTop="?attr/actionBarSize">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/frameLayout1"
+                    android:background="@color/fragmentColor"
+                    />
+                <!--computing and informatics-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="President"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+
+                <!--recyclerView for president-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    />
+
+                <!--computing and informatics-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Computing And Informatics"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                 <!--header for schoolRep-->
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    underline="@{@string/underline}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:text="School Representative"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    list="@{list.masterList}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    school="@{@string/computing}"
+                    position="@{@string/school}"
+                    />
+
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    position="@{@string/women}"
+                    school="@{@string/computing}"
+                    />
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/computing}"
+                    position="@{@string/men}"
+                    />
+
+
+                <!--Agriculture and food science-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="school Of Agriculture and food science"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                <!--header for schoolRep agric-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="School Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/agric}"
+                    position="@{@string/school}"
+                    />
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    school="@{@string/agric}"
+                    position="@{@string/women}"
+                    />
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                   android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/agric}"
+                    position="@{@string/men}"
+                    />
+
+
+                <!--Nursing-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="School of Nursing"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                <!--header for schoolRep-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="School Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/nursing}"
+                    position="@{@string/school}"
+                    />
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    school="@{@string/nursing}"
+                    position="@{@string/women}"
+                    />
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/nursing}"
+                    position="@{@string/men}"
+                    />
+
+
+                <!--health science-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="School of Health science"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                <!--header for schoolRep-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="School Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/health}"
+                    position="@{@string/school}"
+                    />
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    school="@{@string/health}"
+                    position="@{@string/women}"
+                    />
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/health}"
+                    position="@{@string/men}"
+                    />
+
+
+                  <!--School of business-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="School of Business"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                <!--header for schoolRep-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                   android:text="School Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/business}"
+                    position="@{@string/school}"
+                    />
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    school="@{@string/business}"
+                    position="@{@string/women}"
+                    />
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/business}"
+                    position="@{@string/men}"
+                    />
+
+
+                  <!--Engineering-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="School of engineering"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                <!--header for schoolRep-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="School Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/engineering}"
+                    position="@{@string/school}"
+                    />
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    school="@{@string/engineering}"
+                    position="@{@string/women}"
+                    />
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/engineering}"
+                    position="@{@string/men}"
+                    />
+
+
+                  <!--Education-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="School of Education"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                <!--header for schoolRep-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="School Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/education}"
+                    position="@{@string/school}"
+                    />
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    school="@{@string/education}"
+                    position="@{@string/women}"/>
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/education}"
+                    position="@{@string/men}"/>
+
+
+                  <!--spas-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="School of pure And applied Sciences"
+                        underline="@{@string/underline}"
+                        android:textColor="@color/defaultColor"
+                        android:layout_gravity="start|center_vertical"/>
+                </androidx.cardview.widget.CardView>
+                <!--header for schoolRep-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="School Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for school Rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/spas}"
+                    position="@{@string/school}"
+                    />
+                <!--header for women representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Woman Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for woman rep-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    list="@{list.masterList}"
+                    school="@{@string/spas}"
+                    position="@{@string/women}"
+                    />
+                <!--header for men representative-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Men Representative"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="16sp"
+                    underline="@{@string/underline}"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center|center_vertical"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    />
+                <!--recyclerView for men repreentatives-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    list="@{list.masterList}"
+                    school="@{@string/spas}"
+                    position="@{@string/men}"
+                    />
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:backgroundTint="@color/colorAccent"
+            android:id="@+id/progressResult"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

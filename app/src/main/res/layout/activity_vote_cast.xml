@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".VoteCastActivity">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.example.adapter.VoteHandler" />
+
+        <import
+            alias="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--app:layoutDescription="@xml/motionscene1"-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarVoteCast"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/registration_header"
+            android:gravity="center"
+            android:textAlignment="center"
+            app:logo="@drawable/ic_done_black_"
+            app:title="Vote"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:titleTextColor="@color/defaultColor" />
+
+        <!--<androidx.constraintlayout.motion.widget.MotionLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/container"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/toolbarVoteCast"
+            app:layout_constraintTop_toBottomOf="@id/toolbarVoteCast">
+
+
+            <ScrollView
+                android:id="@+id/scrollViewVote"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="61dp"
+                app:layout_constraintBottom_toTopOf="@+id/list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frameLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical">
+                    &lt;!&ndash;President header and viewStub&ndash;&gt;
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/prezo"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="3dp"
+                        android:onClick="@{(v)->handler.onClickItem(v)}"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        app:cardCornerRadius="3dp">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Headline"
+                            myText="@{handler.presNo}"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start|center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Vote for President"
+                            underline="@{@string/underline}"
+                            android:textColor="@color/defaultColor"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="end|center"
+                            android:background="@drawable/ic_expand_less"
+                            app:indicator="@{handler.presHeader}" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerPresident"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{handler.presHeader?view.VISIBLE:view.GONE}"
+                        android:layoutAnimation="@anim/layout_animation"
+                        />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/schoolRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="3dp"
+                        android:onClick="@{(v)->handler.onClickItem(v)}"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        app:cardCornerRadius="3dp">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Headline"
+                            myText="@{handler.schoolNo}"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start|center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+
+                            />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Vote for school Rep"
+                            underline="@{@string/underline}"
+                            android:textColor="@color/defaultColor"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="end|center"
+                            android:background="@drawable/ic_expand_less"
+                            app:indicator="@{handler.schoolHeader}" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerSchoolRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{handler.schoolHeader?view.VISIBLE:view.GONE}"
+                        android:layoutAnimation="@anim/layout_animation"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="3dp"
+                        android:onClick="@{(v)->handler.onClickItem(v)}"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        app:cardCornerRadius="3dp">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Headline"
+                            myText="@{handler.menNo}"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start|center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+
+                            />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Vote for men Rep"
+                            underline="@{@string/underline}"
+                            android:textColor="@color/defaultColor"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="end|center"
+                            android:background="@drawable/ic_expand_less"
+                            app:indicator="@{handler.menHeader}" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerMenRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{handler.menHeader?view.VISIBLE:view.GONE}"
+                        android:layoutAnimation="@anim/layout_animation"
+                        />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/womenRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="3dp"
+                        android:onClick="@{(v)->handler.onClickItem(v)}"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        app:cardCornerRadius="3dp">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Headline"
+                            myText="@{handler.womNo}"
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start|center"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+
+                            />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Vote for Women Rep"
+                            android:textColor="@color/defaultColor"
+                            underline="@{@string/underline}"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            indicator="@{handler.womenHeader}"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="end|center"
+                            android:background="@drawable/ic_expand_less" />
+                    </androidx.cardview.widget.CardView>
+
+                    &lt;!&ndash;women rep header and viewStub&ndash;&gt;
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerWomenRep"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="@{handler.womenHeader?view.VISIBLE:view.GONE}"
+                        android:layoutAnimation="@anim/layout_animation"/>
+                </LinearLayout>
+            </ScrollView>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/frameLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="3dp"
+                android:background="@color/fragmentColor"/>
+
+            &lt;!&ndash;layout containing selected candidates &ndash;&gt;
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/defaultColor"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageButton
+                    android:id="@+id/hideButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/colorPrimary"
+                    android:src="@drawable/ic_expand_more"
+                    app:layout_constraintBottom_toTopOf="@id/recyclerVote"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="40dp"
+                    >
+                    <androidx.constraintlayout.motion.widget.MotionLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerVote"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:visibility="gone"
+                            android:layoutAnimation="@anim/layout_animation"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/noSelectionLabel"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No selection made"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ProgressBar
+                            android:id="@+id/progressSubmitVote"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginBottom="30dp"
+                            android:visibility="gone"
+                            app:backgroundTint="@color/colorAccent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/hideButton"/>
+
+                    </androidx.constraintlayout.motion.widget.MotionLayout>
+                </ScrollView>
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
+        </androidx.constraintlayout.motion.widget.MotionLayout>-->
+
+        <!-- floating button to submit selected candidates -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/submitSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_send_white"
+            app:fabSize="normal"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_label="send"
+            app:tooltipText="send" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:id="@+id/imagePreviewLayout"
+            android:visibility="gone"
+            android:background="@color/colorAccent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:src="@mipmap/profile2"
+                android:scaleType="centerCrop"
+                android:id="@+id/imagePreview"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center_horizontal|top"
+                android:text="hello reuben"
+                android:background="@color/colorPrimary"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/defaultColor"
+                android:id="@+id/nameOnProfilePic"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/state_list"
+                android:layout_gravity="bottom"
+                android:id="@+id/hideImage"
+                android:text="hide"/>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                app:backgroundTint="@color/colorPrimary"
+                android:id="@+id/progressPreview"
+                />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

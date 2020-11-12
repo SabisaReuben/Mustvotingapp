@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.1"
+        android:id="@+id/indexNo"
+        android:background="@color/colorPrimaryDark"/>
+     <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.3"
+         android:id="@+id/fullName"
+         android:background="@android:color/background_dark"/>
+     <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.2"
+         android:id="@+id/party"
+         android:background="@android:color/darker_gray"/>
+     <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.2"
+         android:id="@+id/regNumber"
+         android:background="@color/colorAccent"/>
+     <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.2"
+         android:id="@+id/numberOfVotes"
+         android:background="@android:color/holo_green_dark"/>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:text="Women Rep"
+            android:gravity="center_horizontal|center_vertical"
+            style="@style/AppTheme.MaterialTextView.Header.small"
+            android:id="@+id/positionHeader"/>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:text="NO."
+            android:gravity="center_vertical"
+            style="@style/AppTheme.MaterialTextView.Header.small"
+            android:background="@color/colorPrimaryDark"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:text="FullName"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            style="@style/AppTheme.MaterialTextView.Header.small"
+            android:gravity="center_vertical"
+            android:background="@android:color/background_dark"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Party"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            style="@style/AppTheme.MaterialTextView.Header.small"
+            android:gravity="center_vertical"
+            android:background="@android:color/darker_gray"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Reg No."
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            style="@style/AppTheme.MaterialTextView.Header.small"
+            android:gravity="center_vertical"
+            android:background="@color/colorAccent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="Total Votes"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            style="@style/AppTheme.MaterialTextView.Header.small"
+            android:gravity="center_vertical"
+            android:background="@android:color/holo_green_dark"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerPositions"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+</LinearLayout>
